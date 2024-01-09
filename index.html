@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+        *{
+            font-family: 'Sora', sans-serif;
+        }
+      /* Custom styles */
+      .hero {
+        background-color: #f8f9fa;
+        padding: 100px 0;
+        text-align: center;
+      }
+      .features {
+        padding: 80px 0;
+        text-align: center;
+      }
+      .footer {
+        background-color: #343a40;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+      .agerInputBox{
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Your Brand</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Signin</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero ">
+      <div class="container ">
+        <h1>Welcome to Our Website</h1>
+
+          <div class="form-floating agerInputBox ">
+            <input type="number" class="form-control" id="userInputAge" placeholder="Password">
+            <label for="floatingPassword">Enter Your age</label>
+          </div>
+
+        <div class="result">
+            <span id="ageResult"></span>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-4">
+            <div id="child" class="card">
+              <img
+                src="https://img.freepik.com/free-photo/shot-cute-baby-girl-looking-camera_329181-19580.jpg?w=740&t=st=1704811023~exp=1704811623~hmac=49d8157392ddb89f8569b9cd141d185c3bf5c33066b1f47cbe72d2af26c3ea90"
+                class="card-img-top"
+                alt="Card Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Child</h5>
+                <p class="card-text">You are a Child</p>
+                <a href="#" class="btn btn-primary">Click Here</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div id="adult" class="card">
+              <img
+                src="https://img.freepik.com/free-photo/smiling-man-sitting-street-cafe-table-with-his-arms-crossed_1262-19055.jpg?w=740&t=st=1704811119~exp=1704811719~hmac=d39a6899136ba4b1e4b3984fa3952ff304764be3f0fe8f49aa258a6c294ec30a"
+                class="card-img-top"
+                alt="Card Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Adult</h5>
+                <p class="card-text">You are an Adult</p>
+                <a href="#" class="btn btn-primary">Click Here</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div id="old" class="card">
+              <img
+                src="https://img.freepik.com/free-photo/old-man-posing-indoors-front-view_23-2149883572.jpg?w=740&t=st=1704810798~exp=1704811398~hmac=3463b0a6cdd155d6e76cc4493a75b1cad54514ddf8ade78c631b727d9299cbe7"
+                class="card-img-top"
+                alt="Card Image"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Old</h5>
+                <p class="card-text">You are an Old Man</p>
+                <a href="#" class="btn btn-primary">Click Here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+      <div class="container">
+        <p>&copy; 2024. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let userInputAge = document.getElementById("userInputAge");
+    let child = document.getElementById("child");
+    let adult = document.getElementById("adult");
+    let old = document.getElementById("old");
+    let ageResult = document.getElementById("ageResult")
+
+    
+    userInputAge.onkeyup = function(){
+
+        if(userInputAge.value == ''){
+            child.style.display = "inline-block";
+            adult.style.display = "inline-block";
+            old.style.display = "inline-block";
+            ageResult.textContent = "Enter a value"
+        }else if(userInputAge.value > 39){
+            child.style.display = "none";
+            adult.style.display = "none";
+            old.style.display = "inline-block";
+            ageResult.textContent = `You are ${userInputAge.value} years old man`;
+        }else if(userInputAge.value > 17){
+            child.style.display = "none";
+            adult.style.display = "inline-block";
+            old.style.display = "none";
+            ageResult.textContent = `You are ${userInputAge.value} years old adult`;
+        }else if(userInputAge.value < 17){
+            child.style.display = "inline-block";
+            adult.style.display = "none";
+            old.style.display = "none";
+            ageResult.textContent = `You are ${userInputAge.value} years old child`;
+        }
+
+    }
+
+    userInputAge.onkeydown = function(){
+        if(userInputAge.value == ''){
+            child.style.display = "inline-block";
+            adult.style.display = "inline-block";
+            old.style.display = "inline-block";
+            ageResult.textContent = "Enter a value"
+        }else if(userInputAge.value > 39){
+            child.style.display = "none";
+            adult.style.display = "none";
+            old.style.display = "inline-block";
+            ageResult.textContent = "You are an Old Man";
+        }else if(userInputAge.value > 17){
+            child.style.display = "none";
+            adult.style.display = "inline-block";
+            old.style.display = "none";
+            ageResult.textContent = "You are an Adult";
+        }else if(userInputAge.value < 17){
+            child.style.display = "inline-block";
+            adult.style.display = "none";
+            old.style.display = "none";
+            ageResult.textContent = "You are a child";
+        }
+
+    }
+  </script>
+
+</body>
+</html>
